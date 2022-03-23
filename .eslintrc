@@ -1,0 +1,35 @@
+{
+    "extends": [
+      "standard"
+    ],
+    "plugins": [
+      "import"
+    ],
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "sourceType": "module",
+      "codeFrame": true
+    },
+    "rules": {
+      "array-bracket-spacing": ["error", "never"],
+      "object-curly-spacing": ["error", "always"],
+      "strict": 0,
+      "import/prefer-default-export": 0,
+      "semi": ["error", "always"],
+      "comma-dangle": ["error", {
+        "arrays": "always-multiline",
+        "objects": "always-multiline",
+        "imports": "always-multiline",
+        "exports": "always-multiline"
+      }],
+      "no-async-promise-executor": 0,
+      "no-misleading-character-class": 0,
+      "no-useless-catch": 0,
+      "promise/param-names": 0,
+      "operator-linebreak": 0,
+      "no-multiple-empty-lines": 0,
+      "brace-style": 0,
+      "no-console": 0,
+      "no-shadow": "error"
+    }
+  }
