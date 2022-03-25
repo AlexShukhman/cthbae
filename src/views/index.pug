@@ -1,3 +1,33 @@
 doctype html 
 html 
   include header
+  body 
+    div.top
+      h1.title Welcome! Please enter your meeting name and we'll give you a link:
+    div.center
+      form#meetingNameForm(action='#') 
+        input#meetingNameInput(type="text", name="meetingName")
+        input(type="submit", value="Get Link")
+    script.
+      document.getElementById('meetingNameForm').onsubmit = (e) => {
+        e.preventDefault();
+        return getMeetingLink();
+      };
+
+      function getMeetingLink() {
+        const meetingName = document.getElementById('meetingNameInput').value;
+        
+        return fetch(window.location.origin + '/meeting', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({meetingName}),
+          redirect: 'follow',
+        }).then(response => {
+          if (response.redirected) {
+            window.location.href = response.url;
+          }
+        }).catch((err) => location.reload())
+      }
+    

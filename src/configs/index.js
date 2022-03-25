@@ -4,6 +4,7 @@ export const env = {
   port: Number(process.env.PORT) || 3000,
 
   cookieDomain: local ? 'localhost' : '.cthbae.com',
+  url: local ? 'http://localhost:3000' : 'https://cthbae.com',
   sessionPrivateKey: process.env.SESSION_PRIVATE_KEY || 'demo',
 };
 

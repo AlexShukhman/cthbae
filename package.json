@@ -38,6 +38,7 @@
     "express": "~4.17.3",
     "express-session": "~1.17.2",
     "ioredis": "~4.28.5",
+    "morgan": "~1.10.0",
     "pug": "~3.0.2",
     "reactjs": "~1.0.0"
   }

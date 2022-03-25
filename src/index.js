@@ -5,6 +5,7 @@ import session from 'express-session';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import path from 'path';
+import morgan from 'morgan';
 import {
   env,
   sessionConfig,
@@ -29,6 +30,7 @@ async function startServer () {
   // Use pug
   app.set('views', path.join(__dirname, 'views'));
   app.set('view engine', 'pug');
+  app.use(morgan('combined'));
 
   // Allows CORS stuff
   app.set('trust proxy', 'loopback');

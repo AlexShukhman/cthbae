@@ -1,0 +1,10 @@
+doctype html 
+html 
+  include header
+  body 
+    div.top
+      h1.title Aren't you glad you joined the meeting? Here are the results of the survey so far:
+    div.center
+      p Submission link:&nbsp
+        a(href=`${meetingLink}`) #{meetingLink}
+      p Result: #{meetingResult}
