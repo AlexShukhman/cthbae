@@ -17,7 +17,7 @@ export const redisConfig = {
     : {},
 };
 
-const cookieTTL = 1000 * 60 * 60 * 48; // 2 days in ms
+const cookieTTL = 1000 * 60 * 60 * 24 * 7; // 7 days in ms
 
 export const redisStoreConfig = {
   prefix: 'sess:',

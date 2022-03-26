@@ -6,9 +6,13 @@ body {
 }
 
 div {
-  display: flex;
-  overflow-wrap: break-word;
+  display: grid;
+  overflow-wrap: anywhere;
   white-space: normal;
+}
+
+p {
+  width: 100%;
 }
 
 button {
@@ -16,8 +20,11 @@ button {
   font-size: inherit;
 }
 
-/* CSS */
-.smiley {
+input {
+  font-size: inherit;
+}
+
+button {
   align-items: center;
   background-color: #FFFFFF;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -42,18 +49,18 @@ button {
   height: fit-content;
 }
 
-.smiley:hover,
-.smiley:focus {
+button:hover,
+button:focus {
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   color: rgba(0, 0, 0, 0.65);
 }
 
-.smiley:hover {
+button:hover {
   transform: translateY(-1px);
 }
 
-.smiley:active {
+button:active {
   background-color: #F0F0F1;
   border-color: rgba(0, 0, 0, 0.15);
   box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
@@ -87,5 +94,13 @@ button {
   width: 50%;
   float: right;
   justify-content: left;
+  font-size: 250%;
+}
+
+.center {
+  height: 75%;
+  width: 100%;
+  float: left;
+  justify-content: center;
   font-size: 250%;
 }

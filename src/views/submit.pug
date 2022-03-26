@@ -1,0 +1,30 @@
+doctype html 
+html 
+  include header
+  body
+    div.top
+      h1.title Could the "#{meetingName}" meeting have been an email? 🤔
+    div.left
+      button.smiley(onclick='submit(false)')
+        | 🙂 <br/>
+        | Nah!
+    div.right
+      button.smiley(onclick='submit(true)')
+        | 😤 <br/>
+        | Yes.
+    script.
+      function submit(cthbae) {
+        const meetingId = '#{meetingId}';
+        return fetch(window.location.origin + '/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({cthbae, meetingId}),
+          redirect: 'follow',
+        }).then(response => {
+          if (response.redirected) {
+            window.location.href = response.url;
+          }
+        }).catch((err) => location.reload());
+      }

@@ -1,0 +1,14 @@
+doctype html 
+html 
+  include header
+  body 
+    div.top
+      h1.title Somethings fishy 🐡
+      h2 #{issue}
+    div.center
+      button(onclick='redirect()') #{redirectText}
+    script.
+      const redirectURL = '#{redirectURL}';
+      function redirect () {
+        window.location=`${window.location.origin}${redirectURL}`;
+      }

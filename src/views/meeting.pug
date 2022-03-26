@@ -1,0 +1,27 @@
+doctype html 
+html 
+  include header
+  body 
+    div.top
+      h1.title Aren't you glad you joined the "#{meetingName}" meeting? Here are the results of the survey so far:
+    div.center
+      p Submission link:&nbsp
+        a(href=`${meetingLink}`) #{meetingLink}
+      p#meetingResult 
+
+    script.
+      const meetingResult = '#{meetingResult}';
+
+      switch (meetingResult) {
+        case 'neutral':
+          document.getElementById('meetingResult').innerHTML = 'Meeting results: ¯\\_(ツ)_/¯ (ask someone else, IDK)';
+          break;
+        
+        case 'negative':
+          document.getElementById('meetingResult').innerHTML = 'Meeting results: 😤 (this is why email exists)';
+          break;
+        
+        case 'positive':
+          document.getElementById('meetingResult').innerHTML = 'Meeting results: 🙂 (or 🙃, either way it was unavoidable)';
+          break;
+      }
