@@ -84,7 +84,7 @@ api.get('/fishy', (req, res) => {
   let redirectURL = '/';
   switch (issueCode) {
     case 'resub':
-      issue = 'Looks like you tried to resubmit your answer there, huh buddy?';
+      issue = 'Looks like you tried to resubmit your answer there, huh, buddy?';
       redirectText = 'Results';
       redirectURL = `/meeting?meetingId=${meetingId}`;
       break;

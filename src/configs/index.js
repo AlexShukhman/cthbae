@@ -1,3 +1,7 @@
+import dotenv from 'dotenv';
+
+dotenv.config();
+
 const local = process.env.PROD !== 'true';
 export const env = {
   local,

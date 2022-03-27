@@ -16,7 +16,7 @@
   "scripts": {
     "build": "babel ./src --out-dir dist --copy-files --no-copy-ignored",
     "lint": "eslint src/ --fix",
-    "start": "nodemon -e js,mjs,json,html,css --exec babel-node src index.js"
+    "start": "nodemon -e js,mjs,json,html,css,env,pug --exec babel-node src index.js"
   },
   "devDependencies": {
     "@babel/cli": "~7.17.6",
