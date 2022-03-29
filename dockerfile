@@ -10,8 +10,6 @@ COPY dist .
 # Copy Prod ENV
 ADD .env.prod .env
 
-RUN ls
-
 EXPOSE 3000
 
 ENTRYPOINT [ "node", "index.js" ]
