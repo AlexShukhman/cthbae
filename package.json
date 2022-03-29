@@ -15,8 +15,10 @@
   "engineStrict": true,
   "scripts": {
     "build": "babel ./src --out-dir dist --copy-files --no-copy-ignored",
+    "build:docker": "npm run build; docker build . -t alexshukhman/cthbae",
     "lint": "eslint src/ --fix",
-    "start": "nodemon -e js,mjs,json,html,css,env,pug --exec babel-node src index.js"
+    "start": "nodemon -e js,mjs,json,html,css,env,pug --exec babel-node src index.js",
+    "start:docker": "npm run build:docker; docker run -p 3000:3000 -d alexshukhman/cthbae"
   },
   "devDependencies": {
     "@babel/cli": "~7.17.6",

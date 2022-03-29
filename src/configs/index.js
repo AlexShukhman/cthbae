@@ -14,11 +14,16 @@ export const env = {
 
 export const redisConfig = {
   host: process.env.REDIS_HOST || 'localhost',
-  ...process.env.REDIS_PORT
-    ? {
+  ...process.env.REDIS_PORT ?
+      {
         port: Number(process.env.REDIS_PORT),
-      }
-    : {},
+      } :
+      {},
+  ...process.env.REDIS_PASSWORD ?
+      {
+        password: process.env.REDIS_PASSWORD,
+      } :
+      {},
 };
 
 const cookieTTL = 1000 * 60 * 60 * 24 * 7; // 7 days in ms

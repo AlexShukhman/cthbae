@@ -6,7 +6,7 @@ import { randomUUID as uuid } from 'crypto';
 const api = Router();
 
 api.get('/', (_, res) => {
-  res.render('index', { title: 'Hello World', meetingId: 'demoId', meetingName: 'super long long long long long long demo name' });
+  res.render('index', { title: 'Try me.', meetingId: 'demoId', meetingName: 'super long long long long long long demo name' });
 });
 
 api.post('/meeting', async (req, res) => {
